@@ -1,0 +1,63 @@
+/* Hero Banner styles */
+
+.about-us-hero-banner{
+    background-size: cover;
+    background-position: left;
+    background-repeat: no-repeat;
+    background-image: 
+        linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), 
+        url(../../images/about-us/about-us-hero-banner.jpg);
+}
+
+.hero-banner-logo svg path {
+    fill:#fff;
+}
+
+/* Underline styles */
+
+.underline-animate {
+    color: inherit;
+    text-decoration: none;
+    transition: opacity 1000ms;
+    display: block;
+    position: relative;
+    padding: 0.2em 0;
+    opacity: 0;
+    margin: 0 auto 2em auto;
+    width: 200px;
+}
+
+/* Fade in */
+        
+.underline-animate.hidetext {
+    opacity: 0;
+}
+
+.underline-animate.showtext {
+    opacity: 1;
+}
+
+.underline-animate::after {
+    content: '';
+    position: absolute;
+    height: 0.1em;
+    background-color: rgb(67, 192, 150);
+    width: 100%;
+    left: 0;
+    bottom: 0;
+    opacity: 0;
+    transform: scale(0);
+    transition: opacity 300ms, transform 1000ms;
+}
+
+.underline-animate.hidetext::after {
+    opacity: 0;
+    transform: scale(0);
+}
+
+.underline-animate.showtext::after {
+    opacity: 1;
+    transform: scale(1);
+    transform-origin: center;
+    transition-delay: 400ms;
+}
